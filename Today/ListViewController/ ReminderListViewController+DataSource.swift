@@ -21,6 +21,8 @@ extension ReminderListViewController {
     
     func cellRegistrationHandler(cell: UICollectionViewListCell, indexPath: IndexPath, id: Reminder.ID) {
         let reminder = reminder(withId: id)
+        
+        //contentConfiguration—Describes the cell’s labels, images, buttons, and more
         var contentConfiguration = cell.defaultContentConfiguration()
         contentConfiguration.text = reminder.title
         contentConfiguration.secondaryText = reminder.dueDate.dayAndTimeText
@@ -35,6 +37,7 @@ extension ReminderListViewController {
             .customView(configuration: doneButtonConfiguration), .disclosureIndicator(displayed: .always)
         ]
         
+        //backgroundConfiguration—Describes the cell’s background color, gradient, image, and other visual attributes
         var backgroundConfiguration = UIBackgroundConfiguration.listGroupedCell()
         backgroundConfiguration.backgroundColor = .todayListCellBackground
         
